@@ -1,0 +1,22 @@
+@startuml
+class Main
+class StudentManager {
+  - students: List<Student>
+  + add(student): boolean
+  + findById(id): Student
+  + findByName(name): List<Student>
+  + delete(id): boolean
+  + average(): double
+  + save(file): void
+  + load(file): void
+}
+class Student {
+  - id: int
+  - name: String
+  - age: int
+  - grade: double
+  - subjects: List<String>
+}
+Main --> StudentManager
+StudentManager "1" o-- "0..*" Student
+@enduml
